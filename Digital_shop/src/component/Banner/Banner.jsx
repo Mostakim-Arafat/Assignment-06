@@ -12,7 +12,7 @@ const Banner = () => {
                         className="max-w-sm rounded-lg shadow-2xl"
                     />
                     <div>
-                        <div className='bg-blue-300 rounded-3xl flex items-center gap-2 p-2 max-w-2xs mb-2'>
+                        <div className='bg-blue-300 rounded-3xl flex items-center gap-2 p-2 w-fit mb-2'>
                             <div className='h-2.5 w-2.5 rounded-full bg-purple-600'></div>
                             <div><p className='text-purple-600'>New:AI-Powered Tools Available</p></div>
                         </div>

@@ -2,17 +2,33 @@
 import Nav from './component/navbar/Nav'
 import Banner from './component/Banner/Banner'
 import Stats from './component/Stats/stats'
+import Toggle from './component/BtnToggle/toggle'
+import CardContainer from './component/cardContainer/CardContainer'
+import Step from './component/Steps/step'
+import Price from './component/priceing/price'
+import Footer from './component/footer/footer'
+
 
 import './App.css'
+import { useState } from 'react'
+
+const jsonDataPromise = fetch('../public/data.json').then(res => res.json())
+const pricefetch = fetch('../public/price.json').then(res => res.json())
 
 function App() {
   
+  const [product, setProduct] = useState('product')
 
   return (
     <>
      <Nav/>
      <Banner/>
      <Stats/>
+     <Toggle product={product} setProduct={setProduct}/>
+     <CardContainer jsonDataPromise={jsonDataPromise}/>
+     <Step/>
+     <Price pricefetch={pricefetch}/>
+     <Footer/>
     </>
   )
 }

@@ -9,3 +9,7 @@ body {
   font-family: "Manrope", sans-serif;
   font-weight: 400;
 }
+#list div p{
+  font-size: 14px;
+  color: gray;
+}
