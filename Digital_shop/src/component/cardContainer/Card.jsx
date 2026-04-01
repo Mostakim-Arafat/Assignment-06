@@ -1,16 +1,29 @@
 import React from 'react';
 import Check from '../../assets/Check.png'
-import Button from '../../UI/button';
+import { ToastContainer, toast } from 'react-toastify';
+//import Addcart from './Addcart';
 
-const Card = ({product}) => {
+const Card = ({ product, cart , setCart }) => {
+
+  const handletask = (data) => {
+      toast(`${data.name} is added to chart`);
+      console.log(data)
+      setCart([...cart,data])
+      console.log(cart)
+
+  }
+
+
+
+
     return (
         <div className='p-5 shadow rounded-2xl space-y-3 flex flex-col'>
             <div className='flex justify-end'>
                 <div className={`ml-auto px-3 py-1 rounded-3xl w-fit ${product.tag === 'Best Seller' ? 'bg-[#FEF3C6]  text-[#BB4D00]' : product.tag === 'Popular' ? 'bg-[#E1E7FF] text-purple-400' : 'bg-[#DBFCE7] text-[#0A883E]'}`}>
-                {product.tag}
+                    {product.tag}
                 </div>
             </div>
-            
+
             <div className='border-2 rounded-full w-fit p-1 border-gray-100'>
                 {product.icon}
             </div>
@@ -19,13 +32,13 @@ const Card = ({product}) => {
 
             <p> <span className='font-bold'>${product.price} </span> {product.period}</p>
             <div className='flex flex-col  items-start'>
-            {
-                product.features.map( (item,index) => <li key={index} className='flex items-center justify-center gap-1'><img src={Check} /> {item}</li>)
-            }
+                {
+                    product.features.map((item, index) => <li key={index} className='flex items-center justify-center gap-1'><img src={Check} /> {item}</li>)
+                }
             </div>
 
-            <Button text='Buy Now'></Button>
-
+            <button className='btn bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white rounded-3xl' onClick={() => handletask(product)}>Buy Now</button>
+          <ToastContainer />
         </div>
     );
 };

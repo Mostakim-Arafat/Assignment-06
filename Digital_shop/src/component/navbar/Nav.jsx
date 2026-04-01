@@ -3,7 +3,7 @@ import { FaCarSide } from "react-icons/fa";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import Button from '../../UI/button';
 
-const Nav = () => {
+const Nav = ({cart}) => {
     return (
         <div className='bg-base-100 shadow-sm flex  justify-around items-center  my-3 p-2'>
             <div className='text-2xl font-bold'>
@@ -17,7 +17,10 @@ const Nav = () => {
                 <p>FAQ</p>
             </div>
             <div className='flex items-center gap-2'>
+                <div>
+                    <div className='w-5 h-5 rounded-full p-2 bg-red-500 text-white flex justify-center items-center'><span>{cart.length}</span></div>
                 <MdOutlineShoppingCart />
+                </div>
             <p> Login</p>
             
             <Button text='Get Started'></Button>

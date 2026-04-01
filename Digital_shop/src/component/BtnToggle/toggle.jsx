@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../../UI/button';
 
-const Toggle = ({product,setProduct}) => {
+const Toggle = ({product,setProduct,cart,setCart}) => {
     return (
         <div className='text-center mt-4 space-y-2 mb-2'>
             <h1 className='text-5xl font-bold'>Premium Digital Tools</h1>
@@ -9,7 +9,7 @@ const Toggle = ({product,setProduct}) => {
             <div>
                
                 <button className={`${product === 'product' ? 'bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white px-3 py-1 rounded-3xl' : 'btn ml-4'}`} onClick={() => setProduct('product')}>product</button>
-                <button className={`${product === 'cart' ? 'bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white px-3 py-1 rounded-3xl' : 'btn ml-4'}`} onClick={() => setProduct('cart')}>Cart(2)</button>
+                <button className={`${product === 'cart' ? 'bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white px-3 py-1 rounded-3xl' : 'btn ml-4'}`} onClick={() => setProduct('cart')}>Cart({cart.length})</button>
             </div>
         </div>
     );

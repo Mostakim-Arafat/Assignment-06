@@ -7,28 +7,44 @@ import CardContainer from './component/cardContainer/CardContainer'
 import Step from './component/Steps/step'
 import Price from './component/priceing/price'
 import Footer from './component/footer/footer'
+import Addcart from './component/cardContainer/Addcart'
 
 
 import './App.css'
 import { useState } from 'react'
 
 const jsonDataPromise = fetch('../public/data.json').then(res => res.json())
-const pricefetch = fetch('../public/price.json').then(res => res.json())
+//const pricefetch = fetch('../public/price.json').then(res => res.json())
 
 function App() {
-  
+
   const [product, setProduct] = useState('product')
+  const [cart, setCart] = useState([])
 
   return (
     <>
-     <Nav/>
-     <Banner/>
-     <Stats/>
-     <Toggle product={product} setProduct={setProduct}/>
-     <CardContainer jsonDataPromise={jsonDataPromise}/>
-     <Step/>
+      <Nav cart={cart}/>
+      {/* <Banner/>
+     <Stats/> */}
+
+      <Toggle
+        product={product}
+        setProduct={setProduct}
+        cart={cart} />
+      {
+        product === 'product' ? 
+          <CardContainer
+          jsonDataPromise={jsonDataPromise}
+          cart={cart}
+          setCart={setCart} />
+          :
+          <Addcart cart={cart}/>
+
+      }
+
+      {/* <Step/>
      <Price pricefetch={pricefetch}/>
-     <Footer/>
+     <Footer/> */}
     </>
   )
 }
