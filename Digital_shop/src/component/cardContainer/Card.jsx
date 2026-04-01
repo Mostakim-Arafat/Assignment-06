@@ -1,18 +1,21 @@
 import React from 'react';
 import Check from '../../assets/Check.png'
-import { ToastContainer, toast } from 'react-toastify';
+//import { ToastContainer, toast } from 'react-toastify';
+import { useEffect } from 'react';
 //import Addcart from './Addcart';
 
 const Card = ({ product, cart , setCart }) => {
 
   const handletask = (data) => {
-      toast(`${data.name} is added to chart`);
+     // toast(`${data.name} is added to chart`);
       console.log(data)
-      setCart([...cart,data])
+      setCart( currentVersion => [...currentVersion,data])
       console.log(cart)
-
   }
 
+// useEffect(() => {
+//     console.log(cart)
+// },[cart])
 
 
 
@@ -38,7 +41,7 @@ const Card = ({ product, cart , setCart }) => {
             </div>
 
             <button className='btn bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white rounded-3xl' onClick={() => handletask(product)}>Buy Now</button>
-          <ToastContainer />
+         {/* // <ToastContainer /> */}
         </div>
     );
 };

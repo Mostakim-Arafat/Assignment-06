@@ -38,7 +38,7 @@ function App() {
           cart={cart}
           setCart={setCart} />
           :
-          <Addcart cart={cart}/>
+          <Addcart cart={cart} setCart={setCart}/>
 
       }
 

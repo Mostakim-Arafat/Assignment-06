@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../../UI/button';
 
-const Toggle = ({product,setProduct,cart,setCart}) => {
+const Toggle = ({product,setProduct,cart}) => {
     return (
         <div className='text-center mt-4 space-y-2 mb-2'>
             <h1 className='text-5xl font-bold'>Premium Digital Tools</h1>
