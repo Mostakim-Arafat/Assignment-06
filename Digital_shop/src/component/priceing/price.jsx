@@ -10,7 +10,7 @@ const Price = ({pricefetch}) => {
             <p className='text-[#627382] text-sm mb-10'>Choose the plan that fits your needs. Upgrade or downgrade anytime.</p>
             <div className='grid grid-cols-1 lg:grid-cols-3 gap-8 w-11/12 mx-auto'>
             {
-                pricedata.map( i => <PriceCard data={i}></PriceCard>)
+                pricedata.map( (i,index) => <PriceCard key={index} data={i}></PriceCard>)
             }
             </div>
         </div>

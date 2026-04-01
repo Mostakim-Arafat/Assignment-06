@@ -6,10 +6,10 @@ import Button from '../../UI/button';
 const Nav = ({cart}) => {
     return (
         <div className='bg-base-100 shadow-sm flex  justify-around items-center  my-3 p-2'>
-            <div className='text-2xl font-bold'>
+            <div className='text-2xl font-extrabold text-transparent bg-clip-text bg-linear-to-r from-[#4F39F6] to-[#9514FA]'>
                  <h1>DigiTools</h1>
             </div>
-            <div className='flex gap-2 font-semibold'>
+            <div className='flex gap-5 font-semibold'>
                 <p>Products</p>
                 <p>Features</p>
                 <p>Pricing</p>

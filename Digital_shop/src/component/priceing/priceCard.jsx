@@ -20,7 +20,7 @@ const PriceCard = ({data}) => {
             <p> <span className='font-bold'>${data.price} </span> {data.period}</p>
             <div className='flex flex-col  items-start'>
             {
-                data.features.map( (item) => <li key={data.id} className='flex items-center justify-center gap-1'><img src={Check} /> {item}</li>)
+                data.features.map( item => <li className='flex items-center justify-center gap-1'><img src={Check} /> {item}</li>)
             }
             </div>
 

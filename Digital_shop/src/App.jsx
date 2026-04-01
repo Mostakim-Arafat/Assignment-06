@@ -8,13 +8,14 @@ import Step from './component/Steps/step'
 import Price from './component/priceing/price'
 import Footer from './component/footer/footer'
 import Addcart from './component/cardContainer/Addcart'
+import { ToastContainer } from 'react-toastify';
 
 
 import './App.css'
 import { useState } from 'react'
 
 const jsonDataPromise = fetch('../public/data.json').then(res => res.json())
-//const pricefetch = fetch('../public/price.json').then(res => res.json())
+const pricefetch = fetch('../public/price.json').then(res => res.json())
 
 function App() {
 
@@ -24,8 +25,8 @@ function App() {
   return (
     <>
       <Nav cart={cart}/>
-      {/* <Banner/>
-     <Stats/> */}
+      <Banner/>
+     <Stats/>
 
       <Toggle
         product={product}
@@ -42,9 +43,10 @@ function App() {
 
       }
 
-      {/* <Step/>
+      <Step/>
      <Price pricefetch={pricefetch}/>
-     <Footer/> */}
+     <Footer/>
+     <ToastContainer />
     </>
   )
 }
