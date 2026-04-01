@@ -1,4 +1,7 @@
 
+import Nav from './component/navbar/Nav'
+import Banner from './component/Banner/Banner'
+import Stats from './component/Stats/stats'
 
 import './App.css'
 
@@ -7,8 +10,9 @@ function App() {
 
   return (
     <>
-     <h1 className='text-4xl text-green-400'>hello</h1>
-     <button className='btn btn-primary'>click</button>
+     <Nav/>
+     <Banner/>
+     <Stats/>
     </>
   )
 }
