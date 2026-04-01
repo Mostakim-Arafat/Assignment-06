@@ -14,8 +14,8 @@ import { ToastContainer } from 'react-toastify';
 import './App.css'
 import { useState } from 'react'
 
-const jsonDataPromise = fetch('../public/data.json').then(res => res.json())
-const pricefetch = fetch('../public/price.json').then(res => res.json())
+const jsonDataPromise = fetch('/data.json').then(res => res.json())
+const pricefetch = fetch('/price.json').then(res => res.json())
 
 function App() {
 

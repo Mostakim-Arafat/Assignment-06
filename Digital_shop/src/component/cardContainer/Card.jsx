@@ -1,6 +1,6 @@
 import React from 'react';
 import Check from '../../assets/Check.png'
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 
 
 
@@ -37,7 +37,7 @@ const Card = ({ product, cart , setCart }) => {
             </div>
 
             <button className='btn bg-linear-to-r from-[#4F39F6] to-[#9514FA] text-white rounded-3xl' onClick={() => handletask(product)}>Buy Now</button>
-          <ToastContainer />
+         
         </div>
     );
 };

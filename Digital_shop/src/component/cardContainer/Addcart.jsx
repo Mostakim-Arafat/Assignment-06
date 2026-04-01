@@ -1,14 +1,17 @@
 import React from 'react';
 import AddcartCard from './AddcartCard';
 import EmptyCard from './EmptyCard';
-import Button from '../../UI/button';
+import { toast } from 'react-toastify';
+
 const Addcart = ({ cart, setCart }) => {
     const handleRemove = (cartitem) => {
+        toast('Cart is removed.')
         const newcart = cart.filter( i => i.id!== cartitem )
         setCart(newcart)
             
     }
     const handleempty = () => {
+        toast('Payment done!!')
         const newCart = []
         setCart(newCart)
     }
